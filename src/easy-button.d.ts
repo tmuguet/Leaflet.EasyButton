@@ -52,6 +52,7 @@ declare module 'leaflet' {
   interface EasyBarOptions {
     position?: ControlPosition
     id?: string
+    direction?: 'vertical' | 'horizontal'
     leafletClasses?: boolean
   }
 

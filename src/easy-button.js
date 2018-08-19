@@ -8,6 +8,7 @@ L.Control.EasyBar = L.Control.extend({
   options: {
     position:       'topleft',  // part of leaflet's defaults
     id:             null,       // an id to tag the Bar with
+    direction:      'vertical', // vertical/horizontal
     leafletClasses: true        // use leaflet classes?
   },
 
@@ -34,6 +35,7 @@ L.Control.EasyBar = L.Control.extend({
   _buildContainer: function(){
     this._container = this.container = L.DomUtil.create('div', '');
     this.options.leafletClasses && L.DomUtil.addClass(this.container, 'leaflet-bar easy-button-container leaflet-control');
+    L.DomUtil.addClass(this.container, this.options.direction);
     this.options.id && (this.container.id = this.options.id);
   },
 
